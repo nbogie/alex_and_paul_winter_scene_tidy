@@ -17,6 +17,7 @@ function drawSnowman(posX, posY, size) {
     fill(255, 165, 0);
     triangle(posX,posY - size*1.3, posX,posY - size*1.2, posX + size*0.2,posY - size*1.25);
 }
+
 function drawPineTree(posX, posY, size) {
     //tree trunk:
     fill(160,82,45);
@@ -28,3 +29,15 @@ function drawPineTree(posX, posY, size) {
     triangle(posX,posY - size*2, posX - size, posY - size*0.875, posX + size, posY - size*0.875);
     triangle(posX,posY - size*2.5, posX - size, posY - size*1.375, posX + size, posY - size*1.375);
 }
+
+function drawMessage(posX, posY) {
+    textSize(64);
+    textAlign(CENTER, CENTER);
+    fill(255); // White color for the text
+    
+    // Draw the text with a shadow effect for a festive look
+    fill(0, 102, 153); // Dark blue shadow color
+    text("Happy Christmas!", posX + 5, posY + 5);
+    fill(255); // White color for the text
+    text("Happy Christmas!", posX, posY);
+  }
