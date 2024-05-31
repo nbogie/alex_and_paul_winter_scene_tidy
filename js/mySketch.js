@@ -2,7 +2,6 @@
 //It must be loaded from index.html
 //It assumes that the file "myPalettes.js" has also been loaded
 
-let currentPalette;
 
 function setup() {
     createCanvas(windowWidth, windowHeight / 2);
@@ -11,8 +10,10 @@ function setup() {
 }
 
 function draw() {
-    
+
     drawLand();
+    drawSky();
+    
 }
 
 function mouseClicked() {
