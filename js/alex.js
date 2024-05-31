@@ -12,3 +12,15 @@ function drawSky() {
     fill("DeepSkyBlue");
     rect(0, 0, width, height - 50);
 }
+
+function drawSnowFlake() {
+
+}
+
+function drawSnowFlakes() {
+
+}
+
+function updateSnowFlakes() {
+    
+}
