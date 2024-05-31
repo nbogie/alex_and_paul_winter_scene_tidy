@@ -7,9 +7,11 @@ let currentPalette;
 function setup() {
     createCanvas(windowWidth, windowHeight / 2);
     noStroke();
-    background("white");
+    background("skyblue");
 }
 
 function draw() {
-    drawSnowman();
+    drawSnowman(width/2, height* 0.75, 100);
+    drawSnowman(width*0.25, height* 0.75, 100);
+    drawSnowman(width*0.75, height* 0.75, 100);
 }
