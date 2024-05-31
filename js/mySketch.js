@@ -12,6 +12,5 @@ function setup() {
 
 function draw() {
     drawSnowman(width/2, height* 0.75, 100);
-    drawSnowman(width*0.25, height* 0.75, 100);
-    drawSnowman(width*0.75, height* 0.75, 100);
+    drawPineTree(width*0.25, height* 0.75, 100);
 }

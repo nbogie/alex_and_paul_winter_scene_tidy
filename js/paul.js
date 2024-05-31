@@ -17,3 +17,14 @@ function drawSnowman(posX, posY, size) {
     fill(255, 165, 0);
     triangle(posX,posY - size*1.3, posX,posY - size*1.2, posX + size*0.2,posY - size*1.25);
 }
+function drawPineTree(posX, posY, size) {
+    //tree trunk:
+    fill(160,82,45);
+    rectMode(CENTER);
+    rect(posX,posY,size, size*0.75)
+    //green stuff:
+    fill(0,100,0);
+    triangle(posX,posY - size*1.5, posX - size, posY - size*0.375, posX + size, posY - size*0.375);
+    triangle(posX,posY - size*2, posX - size, posY - size*0.875, posX + size, posY - size*0.875);
+    triangle(posX,posY - size*2.5, posX - size, posY - size*1.375, posX + size, posY - size*1.375);
+}
