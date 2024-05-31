@@ -1,1 +1,5 @@
-// File to work on my contributions
+// File to work on my contribution
+
+function drawSnowman(posX, posY, size) {
+    circle
+}
