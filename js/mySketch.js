@@ -4,26 +4,24 @@
 function setup() {
     createCanvas(windowWidth, windowHeight / 2);
     noStroke();
-    background("white");
     createSnowflakes();
     createClouds();
 }
 
 function draw() {
-
-    drawSky();
+    updateView()
+    drawSnowman(width/2, height* 0.75, 100);
+    drawPineTree(width*0.25, height* 0.75, 100);
+    drawMessage(width/2, 50);
+    drawPresent(width*0.9, 200, "blue", "yellow", 50, 100);
+    // drawSky();
     drawLand();
     drawFence();
     drawSnowflakes();
     moveSnowflakes();
     drawClouds();
     moveClouds();
-    // drawLights();
 
-}
-
-function mouseClicked() {
-    background(255);
 }
 
 function keyPressed() {
@@ -32,3 +30,10 @@ function keyPressed() {
     }
 }
 
+function mouseClicked() {
+    if(time.mode == 'day') {
+        switchMode('night')
+    } else if (time.mode === 'night') {
+        switchMode('day')
+    }
+}
