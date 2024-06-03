@@ -33,11 +33,29 @@ function drawPineTree(posX, posY, size) {
 function drawMessage(posX, posY) {
     textSize(64);
     textAlign(CENTER, CENTER);
-    fill(255); // White color for the text
+    fill(255); // White colour for the text
     
-    // Draw the text with a shadow effect for a festive look
-    fill(0, 102, 153); // Dark blue shadow color
+    fill(0, 102, 153); // Dark blue shadow colour
     text("Happy Christmas!", posX + 5, posY + 5);
-    fill(255); // White color for the text
+    fill(255); // White colour for the text
     text("Happy Christmas!", posX, posY);
   }
+
+let glowsize = 50;
+function drawSun(posX, posY) {
+    //Sun glow effect
+    fill(255, 50);
+    let size = 50;
+    circle(posX, posY, glowsize);
+    glowsize += 0.5
+    if (glowsize > size+size/2.5) {
+        glowsize = size;
+    }
+    //Orange sun circle
+    fill(244, 128, 55);
+    circle(posX, posY, size);
+}
+
+function drawMoon(posX, posY) {
+
+}
