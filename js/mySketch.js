@@ -5,13 +5,21 @@
 function setup() {
     createCanvas(windowWidth, windowHeight / 2);
     noStroke();
+    rectMode(CENTER);
 }
 
 function draw() {
-    background(25, 25, 112);
+    updateView()
     drawSnowman(width/2, height* 0.75, 100);
     drawPineTree(width*0.25, height* 0.75, 100);
     drawMessage(width/2, 50);
-    drawSun(width * 0.75, 75)
-    drawMoon(width * 0.75, 150)
+    drawPresent(width*0.9, 200, "blue", "yellow", 50, 100)
+}
+
+function mouseClicked() {
+    if(time.mode == 'day') {
+        switchMode('night')
+    } else if (time.mode === 'night') {
+        switchMode('day')
+    }
 }

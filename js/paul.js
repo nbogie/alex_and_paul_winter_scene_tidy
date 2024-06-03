@@ -21,7 +21,6 @@ function drawSnowman(posX, posY, size) {
 function drawPineTree(posX, posY, size) {
     //tree trunk:
     fill(160,82,45);
-    rectMode(CENTER);
     rect(posX,posY,size, size*0.75)
     //green stuff:
     fill(0,100,0);
@@ -67,5 +66,38 @@ function drawMoon(posX, posY) {
     eclipsePos -= 0.5
     if (eclipsePos < -55) {
         eclipsePos = 55
+    }
+}
+
+function drawPresent(posX, posY, colour1, colour2, presentWidth, presentHeight) {
+    //present body
+    fill(colour1)
+    rect(posX, posY, presentWidth, presentHeight)
+    //ribbons
+    fill(colour2)
+    rect(posX, posY, presentWidth/5, presentHeight)
+    rect(posX, posY, presentWidth, presentHeight/5)
+}
+
+//Day and Night modes:
+const time = {
+    mode: 'day',
+};
+
+function switchMode(newMode) {
+    time.mode = newMode;
+    updateView();
+}
+
+function updateView() {
+    switch(time.mode) {
+        case 'day':
+            background("skyblue")
+            drawSun(width * 0.75, 75)
+            break;
+        case 'night':
+            background(25, 25, 112);
+            drawMoon(width * 0.75, 75)
+            break;
     }
 }
