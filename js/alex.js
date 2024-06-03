@@ -1,4 +1,5 @@
 let snowflakes = [];
+let clouds = [];
 
 function drawLand() {
     let landHeight = 200;
@@ -46,9 +47,11 @@ function moveSnowflakes() {
 }
 
 function drawFence() {
+    push();
+    fill("brown");
     for (let x = 0; x < width; x += 40) {
-        for (let y = height; y < (height / 3); y++) {
-            rect(x, y, 10, 10);
-        }
+        rect(x, height - 105, 10, 60);
     }
+    rect(0, height - 90, width, 10);
+    pop();
 }
