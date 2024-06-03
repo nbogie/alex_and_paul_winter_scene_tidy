@@ -6,15 +6,19 @@ function setup() {
     noStroke();
     background("white");
     createSnowflakes();
+    createClouds();
 }
 
 function draw() {
 
     drawSky();
     drawLand();
+    drawFence();
     drawSnowflakes();
     moveSnowflakes();
-    drawFence();
+    drawClouds();
+    moveClouds();
+
 }
 
 function mouseClicked() {
