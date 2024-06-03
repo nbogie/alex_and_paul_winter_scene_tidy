@@ -56,6 +56,16 @@ function drawSun(posX, posY) {
     circle(posX, posY, size);
 }
 
+let eclipsePos = 55;
 function drawMoon(posX, posY) {
-
+    //white moon circle
+    fill(255);
+    circle(posX, posY, 50);
+    //moon cycling
+    fill(25, 25, 112);
+    circle(posX-eclipsePos, posY, 50);
+    eclipsePos -= 0.5
+    if (eclipsePos < -55) {
+        eclipsePos = 55
+    }
 }

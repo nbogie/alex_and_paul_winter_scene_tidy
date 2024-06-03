@@ -8,9 +8,10 @@ function setup() {
 }
 
 function draw() {
-    background("skyblue");
+    background(25, 25, 112);
     drawSnowman(width/2, height* 0.75, 100);
     drawPineTree(width*0.25, height* 0.75, 100);
     drawMessage(width/2, 50);
     drawSun(width * 0.75, 75)
+    drawMoon(width * 0.75, 150)
 }
