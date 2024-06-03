@@ -11,10 +11,9 @@ function setup() {
 function draw() {
     updateView()
     drawSnowman(width/2, height* 0.75, 100);
-    drawPineTree(width*0.25, height* 0.75, 100);
+    drawPineTree(width*0.25, height*0.9, 100);
     drawMessage(width/2, 50);
-    drawPresent(width*0.9, 200, "blue", "yellow", 50, 100);
-    // drawSky();
+    drawPresent(300, 350, "red", "green", 50, 100);
     drawLand();
     drawFence();
     drawSnowflakes();

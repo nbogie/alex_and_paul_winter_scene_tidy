@@ -1,5 +1,15 @@
-// File to work on my contribution
+//Draw fence
+function drawFence() {
+    push();
+    fill("brown");
+    for (let x = 0; x < width; x += 40) {
+        rect(x, height - 105, 10, 60);
+    }
+    rect(0, height - 110, width, 10);
+    pop();
+}
 
+//Draw snowman
 function drawSnowman(posX, posY, size) {
     //Snowman Body:
     fill(255);
@@ -18,11 +28,14 @@ function drawSnowman(posX, posY, size) {
     triangle(posX,posY - size*1.3, posX,posY - size*1.2, posX + size*0.2,posY - size*1.25);
 }
 
+//Draw pine tree
 function drawPineTree(posX, posY, size) {
+    push();
     rectMode(CENTER);
     //tree trunk:
     fill(160,82,45);
     rect(posX,posY,size, size*0.75)
+    pop();
     //green stuff:
     fill(0,100,0);
     triangle(posX,posY - size*1.5, posX - size, posY - size*0.375, posX + size, posY - size*0.375);
@@ -30,48 +43,10 @@ function drawPineTree(posX, posY, size) {
     triangle(posX,posY - size*2.5, posX - size, posY - size*1.375, posX + size, posY - size*1.375);
 }
 
-function drawMessage(posX, posY) {
-    textSize(64);
-    textAlign(CENTER, CENTER);
-    fill(255); // White colour for the text
-    
-    fill(0, 102, 153); // Dark blue shadow colour
-    text("Happy Christmas!", posX + 5, posY + 5);
-    fill(255); // White colour for the text
-    text("Happy Christmas!", posX, posY);
-  }
-
-let glowsize = 50;
-function drawSun(posX, posY) {
-    //Sun glow effect
-    fill(255, 50);
-    let size = 50;
-    circle(posX, posY, glowsize);
-    glowsize += 0.5
-    if (glowsize > size+size/2.5) {
-        glowsize = size;
-    }
-    //Orange sun circle
-    fill(244, 128, 55);
-    circle(posX, posY, size);
-}
-
-let eclipsePos = 55;
-function drawMoon(posX, posY) {
-    //white moon circle
-    fill(255);
-    circle(posX, posY, 50);
-    //moon cycling
-    fill(25, 25, 112);
-    circle(posX-eclipsePos, posY, 50);
-    eclipsePos -= 0.5
-    if (eclipsePos < -55) {
-        eclipsePos = 55
-    }
-}
-
+//Draw present
 function drawPresent(posX, posY, colour1, colour2, presentWidth, presentHeight) {
     //present body
+    push();
     rectMode(CENTER);
     fill(colour1)
     rect(posX, posY, presentWidth, presentHeight)
@@ -79,27 +54,5 @@ function drawPresent(posX, posY, colour1, colour2, presentWidth, presentHeight) 
     fill(colour2)
     rect(posX, posY, presentWidth/5, presentHeight)
     rect(posX, posY, presentWidth, presentHeight/5)
-}
-
-//Day and Night modes:
-const time = {
-    mode: 'day',
-};
-
-function switchMode(newMode) {
-    time.mode = newMode;
-    updateView();
-}
-
-function updateView() {
-    switch(time.mode) {
-        case 'day':
-            background("skyblue")
-            drawSun(width * 0.75, 75)
-            break;
-        case 'night':
-            background(25, 25, 112);
-            drawMoon(width * 0.75, 75)
-            break;
-    }
+    pop();
 }
