@@ -13,6 +13,7 @@ function draw() {
 
     drawLand();
     drawSky();
+    drawSnowflakes();
     
 }
 

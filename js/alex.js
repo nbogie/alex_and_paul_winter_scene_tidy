@@ -1,3 +1,4 @@
+
 function drawLand() {
     let landHeight = 200;
     push();
@@ -13,14 +14,15 @@ function drawSky() {
     rect(0, 0, width, height - 50);
 }
 
-function drawSnowFlake() {
-
+function drawSnowflake() {
+    let randomPositionX = random(0, width);
+    fill("white");
+    circle(randomPositionX, 0, 5);
+    randomPositionX++;
 }
 
-function drawSnowFlakes() {
-
-}
-
-function updateSnowFlakes() {
-
+function drawSnowflakes() {
+    for (let i = 0; i < 50; i++) {
+        drawSnowflake();
+    }
 }
