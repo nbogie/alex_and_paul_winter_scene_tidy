@@ -18,6 +18,7 @@ function draw() {
     moveSnowflakes();
     drawClouds();
     moveClouds();
+    // drawLights();
 
 }
 

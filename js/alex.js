@@ -107,3 +107,25 @@ function moveSnowflakes() {
         }
     }
 }
+
+// function drawLights() {
+//     drawLightPoles();
+//     push();
+//     fill("gray");
+//     rect(20, 210, width - 35, 5);
+//     let lightsDiameter = 5;
+//     for (let i = 30; i < width - 20; i += 10) {
+//         push();
+//         fill("yellow");
+//         circle(i, 212, lightsDiameter);
+//         pop();
+//     }
+// }
+
+// function drawLightPoles() {
+//     push();
+//     fill("black");
+//     rect(20, 200, 5, 500); 
+//     rect(width - 20, 200, 5, 500);
+//     pop();
+// }
