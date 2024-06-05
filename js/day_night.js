@@ -2,6 +2,7 @@
 const time = {
     mode: "day",
 };
+
 let glowsize = 50;
 let eclipsePos = 55;
 
@@ -38,10 +39,10 @@ function drawMoon(posX, posY) {
 
 function switchMode(newMode) {
     time.mode = newMode;
-    updateView();
+    drawSunMoonSky();
 }
 
-function updateView() {
+function drawSunMoonSky() {
     switch (time.mode) {
         case "day":
             background("skyblue");
