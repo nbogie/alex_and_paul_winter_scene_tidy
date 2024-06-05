@@ -1,6 +1,6 @@
 //Global variables
 const time = {
-    mode: 'day',
+    mode: "day",
 };
 let glowsize = 50;
 let eclipsePos = 55;
@@ -11,8 +11,8 @@ function drawSun(posX, posY) {
     fill(255, 50);
     let size = 50;
     circle(posX, posY, glowsize);
-    glowsize += 0.5
-    if (glowsize > size+size/2.5) {
+    glowsize += 0.5;
+    if (glowsize > size + size / 2.5) {
         glowsize = size;
     }
     //Orange sun circle
@@ -27,10 +27,10 @@ function drawMoon(posX, posY) {
     circle(posX, posY, 50);
     //moon cycling
     fill(25, 25, 112);
-    circle(posX-eclipsePos, posY, 50);
-    eclipsePos -= 0.5
+    circle(posX - eclipsePos, posY, 50);
+    eclipsePos -= 0.5;
     if (eclipsePos < -55) {
-        eclipsePos = 55
+        eclipsePos = 55;
     }
 }
 
@@ -42,14 +42,14 @@ function switchMode(newMode) {
 }
 
 function updateView() {
-    switch(time.mode) {
-        case 'day':
-            background("skyblue")
-            drawSun(width * 0.75, 75)
+    switch (time.mode) {
+        case "day":
+            background("skyblue");
+            drawSun(width * 0.75, 75);
             break;
-        case 'night':
+        case "night":
             background(25, 25, 112);
-            drawMoon(width * 0.75, 75)
+            drawMoon(width * 0.75, 75);
             break;
     }
 }

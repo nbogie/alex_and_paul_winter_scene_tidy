@@ -9,10 +9,10 @@ function setup() {
 }
 
 function draw() {
-    updateView()
-    drawSnowman(width/2, height* 0.75, 100);
-    drawPineTree(width*0.25, height*0.9, 100);
-    drawMessage(width/2, 50);
+    updateView();
+    drawSnowman(width / 2, height * 0.75, 100);
+    drawPineTree(width * 0.25, height * 0.9, 100);
+    drawMessage(width / 2, 50);
     drawPresent(300, 350, "red", "green", 50, 100);
     drawLand();
     drawFence();
@@ -20,7 +20,6 @@ function draw() {
     moveSnowflakes();
     drawClouds();
     moveClouds();
-
 }
 
 function keyPressed() {
@@ -30,9 +29,9 @@ function keyPressed() {
 }
 
 function mouseClicked() {
-    if(time.mode == 'day') {
-        switchMode('night')
-    } else if (time.mode === 'night') {
-        switchMode('day')
+    if (time.mode == "day") {
+        switchMode("night");
+    } else if (time.mode === "night") {
+        switchMode("day");
     }
 }
