@@ -1,27 +1,16 @@
+"use strict";
 let clouds = [];
 
-function drawClouds() {
-    for (let cloudArray of clouds) {
-        for (let rectangleObject of cloudArray) {
-            push();
-            fill("white");
-            rect(
-                rectangleObject.x,
-                rectangleObject.y,
-                rectangleObject.w,
-                rectangleObject.h
-            );
-            pop();
-        }
-    }
+function createClouds() {
+    clouds = collect(4, createOneCloud);
 }
 
-function createClouds() {
-    for (let i = 0; i < 4; i++) {
-        let cloudX = random(0, width);
-        let cloudY = random(10, 150);
-        let speed = random(1, 1.1);
-        let cloud = [
+function createOneCloud() {
+    let cloudX = random(0, width);
+    let cloudY = random(10, 150);
+    let speed = random(1, 1.1);
+    let cloud = {
+        pieces: [
             {
                 x: cloudX,
                 y: cloudY,
@@ -36,21 +25,40 @@ function createClouds() {
                 h: 30,
                 speed: speed,
             },
-        ];
-        clouds.push(cloud);
+        ],
+        speed,
+    };
+    return cloud;
+}
+function drawClouds() {
+    for (let cloud of clouds) {
+        for (let rectangleObject of cloud.pieces) {
+            push();
+            fill("white");
+            rect(
+                rectangleObject.x,
+                rectangleObject.y,
+                rectangleObject.w,
+                rectangleObject.h
+            );
+            pop();
+        }
     }
 }
 
 function moveClouds() {
-    for (let cloudArray of clouds) {
-        for (let rectangleObject of cloudArray) {
-            rectangleObject.x += rectangleObject.speed;
-        }
-        if (cloudArray[0].x > width) {
-            for (let rectangleObject of cloudArray) {
-                rectangleObject.x -=
-                    width + cloudArray[cloudArray.length - 1].w;
-            }
+    for (const cloud of clouds) {
+        moveOneCloud(cloud);
+    }
+}
+function moveOneCloud(cloud) {
+    for (let rectangleObject of cloud.pieces) {
+        rectangleObject.x += cloud.speed;
+    }
+    if (cloud.pieces[0].x > width) {
+        for (let rectangleObject of cloud.pieces) {
+            rectangleObject.x -=
+                width + cloud.pieces[cloud.pieces.length - 1].w;
         }
     }
 }
