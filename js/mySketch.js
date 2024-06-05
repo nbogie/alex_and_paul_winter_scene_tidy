@@ -1,3 +1,4 @@
+"use strict";
 let snowflakeImage;
 let config = {
     useSnowflakeImages: false, //"i" to toggle

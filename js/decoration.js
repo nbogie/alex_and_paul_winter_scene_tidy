@@ -1,3 +1,4 @@
+"use strict";
 //Draw fence
 function drawFence() {
     push();
