@@ -9,7 +9,7 @@ function setup() {
 }
 
 function draw() {
-    updateView();
+    drawSunMoonSky();
     drawSnowman(width / 2, height * 0.75, 100);
     drawPineTree(width * 0.25, height * 0.9, 100);
     drawMessage(width / 2, 50);
@@ -17,8 +17,9 @@ function draw() {
     drawLand();
     drawFence();
     drawSnowflakes();
-    moveSnowflakes();
     drawClouds();
+
+    moveSnowflakes();
     moveClouds();
 }
 
