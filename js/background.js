@@ -12,20 +12,23 @@ function createOneSnowflake() {
         y: random(0, height),
         size: 5,
         speed: random(1, 5),
+        offset: random(TWO_PI),
     };
 }
 
 function drawSnowflakes() {
     for (let snowflake of snowflakes) {
         push();
+        translate(snowflake.x, snowflake.y);
         fill("white");
         const sz = snowflake.speed * 1.5 * 5;
 
         if (config.useSnowflakeImages) {
             imageMode(CENTER);
-            image(snowflakeImage, snowflake.x, snowflake.y, sz, sz);
+            rotate(snowflake.offset + frameCount / 100);
+            image(snowflakeImage, 0, 0, sz, sz);
         } else {
-            circle(snowflake.x, snowflake.y, snowflake.speed * 1.5);
+            circle(0, 0, snowflake.speed * 1.5);
         }
         pop();
     }
