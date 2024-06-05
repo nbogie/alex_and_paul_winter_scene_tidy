@@ -1,17 +1,18 @@
+"use strict";
 //Global variables
 let snowflakes = [];
 
-//Draw and update snowflakes
 function createSnowflakes() {
-    for (let i = 0; i < 100; i++) {
-        let snowflake = {
-            x: random(0, width),
-            y: random(0, height),
-            size: 5,
-            speed: random(1, 5),
-        };
-        snowflakes.push(snowflake);
-    }
+    snowflakes = collect(100, createOneSnowflake);
+}
+
+function createOneSnowflake() {
+    return {
+        x: random(0, width),
+        y: random(0, height),
+        size: 5,
+        speed: random(1, 5),
+    };
 }
 
 function drawSnowflakes() {
