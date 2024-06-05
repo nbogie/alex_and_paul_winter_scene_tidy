@@ -19,7 +19,14 @@ function drawSnowflakes() {
     for (let snowflake of snowflakes) {
         push();
         fill("white");
-        circle(snowflake.x, snowflake.y, snowflake.speed * 1.5);
+        const sz = snowflake.speed * 1.5 * 5;
+
+        if (config.useSnowflakeImages) {
+            imageMode(CENTER);
+            image(snowflakeImage, snowflake.x, snowflake.y, sz, sz);
+        } else {
+            circle(snowflake.x, snowflake.y, snowflake.speed * 1.5);
+        }
         pop();
     }
 }

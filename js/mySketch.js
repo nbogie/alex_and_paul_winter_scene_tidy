@@ -1,3 +1,11 @@
+let snowflakeImage;
+let config = {
+    useSnowflakeImages: false, //"i" to toggle
+};
+
+function preload() {
+    snowflakeImage = loadImage("images/snowflake6.png");
+}
 //This is our main javascript file constituting our p5.js sketch.
 //It must be loaded from index.html
 //It assumes that the file "myPalettes.js" has also been loaded
@@ -26,6 +34,9 @@ function draw() {
 function keyPressed() {
     if (key === "s") {
         save("my-p5-screenshot");
+    }
+    if (key === "i") {
+        config.useSnowflakeImages = !config.useSnowflakeImages;
     }
 }
 
